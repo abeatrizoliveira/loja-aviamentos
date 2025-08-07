@@ -24,7 +24,6 @@
                 mysqli_query($mysqli, $updateAccess);
                 $_SESSION['id'] = $line['idusuario'];
                 $_SESSION['nome'] = $line['nome'];
-                $_SESSION['tipo'] = $line['tipo'];
 
                 header("Location: ../pages/home.php");
                 }
