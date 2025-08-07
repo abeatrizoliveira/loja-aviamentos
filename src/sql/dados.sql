@@ -14,5 +14,5 @@ create table usuario(
     nome varchar(100) not null,
     email varchar(100) not null,
     senha varchar(255) not null,
-    type int not null -- 0 = admin, 1 = user
+    tipo int not null -- 0 = admin, 1 = user
 );
