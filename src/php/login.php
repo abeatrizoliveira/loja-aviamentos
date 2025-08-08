@@ -20,7 +20,7 @@
         if($result && mysqli_num_rows($result) === 1){
             $line = mysqli_fetch_assoc($result);
 
-            if($password == $line['senha'])) {
+            if($password == $line['senha']){
                 mysqli_query($mysqli, $updateAccess);
                 $_SESSION['id'] = $line['idusuario'];
                 $_SESSION['nome'] = $line['nome'];
