@@ -3,7 +3,7 @@
 A loja para você: costureira, tricoteira e crocheteira. Chega mais para conhecer!
 
 ## Objetivo
-Este trabalho foi desenvolvido na matéria de Qualidade e teste de software.
+Sistema web desenvolvido na matéria de Qualidade e teste de software.
 
 ## Linguagens utilizadas
 
