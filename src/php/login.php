@@ -14,7 +14,7 @@
         $user = $_POST['loginUser'];
         $pass = $_POST['loginPass'];
 
-        $sql = "SELECT * FROM usuario WHERE nome = '$user'";
+        $sql = "SELECT * FROM usuario WHERE email = '$user'";
         $result = mysqli_query($mysqli, $sql);
      
         if($result && mysqli_num_rows($result) === 1){
@@ -25,7 +25,7 @@
                 $_SESSION['id'] = $line['idusuario'];
                 $_SESSION['nome'] = $line['nome'];
 
-                header("Location: ../pages/home.php");
+                header("Location: ../lojas.html");
                 }
             }else{
                 echo "<div class='error'>";

@@ -12,10 +12,10 @@
     <div class="flex justify-center mb-2">
       <img src="assets/logo(1).png" alt="Logo Betty Aviamentos" class="h-20 w-auto">
     </div>
-    <form id="loginForm" class="space-y-4" method="">
+    <form id="loginForm" class="space-y-4" method="POST" action="php/login.php">
       <div>
-        <label class="block text-black font-medium">Usuário</label>
-        <input type="text" id="loginUser" name="loginUser" class="w-full border border-[#f9c6c6] bg-white rounded px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#C75B6B] text-black" required placeholder="Digite seu usuário">
+        <label class="block text-black font-medium">E-mail</label>
+        <input type="email" id="loginUser" name="loginUser" class="w-full border border-[#f9c6c6] bg-white rounded px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#C75B6B] text-black" required placeholder="Digite seu usuário">
       </div>
       <div>
         <label class="block text-black font-medium">Senha</label>
