@@ -11,10 +11,10 @@
         include 'connection.php';
         session_start();
         
-        $user = $_POST['adicionardps'];
-        $pass = $_POST['adicionardps'];
+        $user = $_POST['loginUser'];
+        $pass = $_POST['loginPass'];
 
-        $sql = "SELECT * FROM usuarios WHERE nome = '$user'";
+        $sql = "SELECT * FROM usuario WHERE nome = '$user'";
         $result = mysqli_query($mysqli, $sql);
      
         if($result && mysqli_num_rows($result) === 1){
