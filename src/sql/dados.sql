@@ -17,9 +17,9 @@ create table usuario(
 );
 
 INSERT INTO oliveira (nome, imagem, preco, descricao) VALUES
-('Carretel de Linha Poliéster - 500m', 'linha_poliester.jpg', 6.50, 'Linha resistente para costura geral'),
-('Pacote com 100 Botões Coloridos', 'botoes_coloridos.jpg', 12.90, 'Botões plásticos sortidos 15mm'),
-('Zíper Nylon nº5 - 20cm', 'ziper_nylon.jpg', 3.25, 'Zíper leve e durável para roupas');
+('Carretel de Linha Poliéster - 500m', 'uploads/linhas.png', 6.50, 'Linha resistente para costura geral'),
+('Pacote com 100 Botões Coloridos', 'uploads/botoes.png', 12.90, 'Botões plásticos sortidos 15mm'),
+('Agulha Nylon nº5 - 20cm', 'uploads/agulhas.png', 3.25, 'Agulha fina e durável para roupas');
 
 INSERT INTO usuario (nome, email, senha) VALUES
 ('Maria', 'maria@aviamentos.com', 'senha123'),
