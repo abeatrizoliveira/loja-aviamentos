@@ -22,6 +22,6 @@ INSERT INTO oliveira (nome, imagem, preco, descricao) VALUES
 ('Zíper Nylon nº5 - 20cm', 'ziper_nylon.jpg', 3.25, 'Zíper leve e durável para roupas');
 
 INSERT INTO usuario (nome, email, senha) VALUES
-('Maria Costureira', 'maria@aviamentos.com', 'senha123'),
-('João Artesão', 'joao@aviamentos.com', 'costura456'),
+('Maria', 'maria@aviamentos.com', 'senha123'),
+('João', 'joao@aviamentos.com', 'costura456'),
 ('Letícia Beatriz', 'leticia@aviamentos.com', 'aviamento789');
