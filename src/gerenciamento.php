@@ -150,7 +150,7 @@ $result2 = mysqli_query($connection, $sql2);
                   echo "<td class=\"px-6 py-4 whitespace-nowrap text-sm\">" . htmlspecialchars($line['nome']) . "</td>";
                   echo "<td class=\"px-6 py-4 whitespace-nowrap text-sm\">" . htmlspecialchars($line['email']) . "</td>";
                       echo "<td class=\"px-6 py-4 whitespace-nowrap text-sm\">";
-                      echo "<a href=\"../updateUsuario.php?id=" .$line["idusuario"]. "\" class=\"text-indigo-600 hover:text-indigo-900 mr-3\"><i class=\"fas fa-edit\"></i></a>";
+                      echo "<a href=\"updateUsuario.php?id=" .$line["idusuario"]. "\" class=\"text-indigo-600 hover:text-indigo-900 mr-3\"><i class=\"fas fa-edit\"></i></a>";
                       echo "<a href=\"php/deleteUsuario.php?id=" .$line["idusuario"]. "\" class=\"text-red-600 hover:text-red-900\"><i class=\"fas fa-trash-alt\"></i></a>";
                       echo "</td>";
                       echo "</tr>";
