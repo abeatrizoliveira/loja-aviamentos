@@ -1,3 +1,11 @@
+<?php
+include "php/connection.php";
+session_start();
+
+$sql = "SELECT idprod, nome, imagem, preco, descricao FROM oliveira";
+$result = mysqli_query($connection, $sql);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -33,13 +41,12 @@
           <a href="#contato" class="text-[#C75B6B] hover:text-[#a94a59] px-3 py-2 font-medium">Contato</a>
 
           <div class="flex space-x-4">
-            <button
+            <a href="gerenciamento.php"
               class="text-[#C75B6B] px-4 py-2 rounded-md font-medium transition duration-300">
-              <i class="fas fa-shopping-cart text-2"></i>
-            </button>
+              <i class="fa-solid fa-database" title="Gerenciamento"></i>
+            </a >
           </div>
         </div>
-
         <!-- Mobile menu button -->
         <div class="md:hidden flex items-center">
           <button id="mobile-menu-button" class="text-gray-800 hover:text-rose-600 focus:outline-none">
@@ -60,7 +67,7 @@
         <div class="pt-2 border-t border-gray-200">
           <button
             class="w-full mt-2 bg-[#C75B6B] hover:bg-[#a94a59] text-white px-4 py-2 rounded-md font-medium transition duration-300">
-            <i class="fas fa-shopping-cart text-2"></i> Carrinho
+            <i class="fa-solid fa-database"></i> Gerenciamento
           </button>
         </div>
       </div>
@@ -93,24 +100,31 @@
       <div class="container mx-auto px-6">
   <h2 class="text-3xl font-bold text-center text-[#C75B6B] mb-12">Nossos Produtos</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          <!-- Product 1 -->
-          <div
-            class="product-card bg-[#F9C6C6] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
-            <img src="assets/linhas.png" alt="Linhas coloridas" class="w-full h-48 object-cover">
-            <div class="p-4">
-              <h3 class="text-xl font-semibold text-[#C75B6B] mb-2">Linhas Coloridas</h3>
-              <p class="text-gray-600 mb-4">Conjunto com 5 cores diferentes</p>
-              <div class="flex justify-between items-center">
-                <span class="text-xl font-bold text-[#C75B6B]">R$ 29,90</span>
-                <button class="bg-[#C75B6B] hover:bg-[#a94a59] text-white px-4 py-2 rounded-lg transition duration-300">
-                  <i class="fas fa-cart-plus"></i> Comprar
+              <?php
+      if ($result && mysqli_num_rows($result) > 0) {
+        while ($line = mysqli_fetch_assoc($result)) {
+            echo "<div
+            class=\"product-card bg-[#F9C6C6] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300\">
+            <img src=\"" . $line['imagem'] . "\" alt=\"Linhas coloridas\" class=\"w-full h-48 object-cover\">
+            <div class=\"p-4\">
+              <h3 class=\"text-xl font-semibold text-[#C75B6B] mb-2\">" . $line['nome'] . "</h3>
+              <p class=\"text-gray-600 mb-4\">". $line['descricao']."</p>
+              <div class=\"flex justify-between items-center\">
+                <span class=\"text-xl font-bold text-[#C75B6B]\">" ."R$".$line['preco']."</span>
+                <button class=\"bg-[#C75B6B] hover:bg-[#a94a59] text-white px-4 py-2 rounded-lg transition duration-300\">
+                  <i class=\"fas fa-cart-plus\"></i> Comprar
                 </button>
               </div>
             </div>
-          </div>
+          </div>";
+        }
+      } else {
+        echo "<tr><td colspan='4'>Nenhum usuário encontrado.</td></tr>";
+      }
+    ?>
+          <!-- Product 1 --
 
-          <!-- Product 2 -->
-          <div
+          <!-- <div
             class="product-card bg-[#F9C6C6] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
             <img src="assets/botoes.png" alt="Botões diversos" class="w-full h-48 object-cover">
             <div class="p-4">
@@ -124,8 +138,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Product 3 -->
           <div
             class="product-card bg-[#F9C6C6] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
             <img src="assets/tecidos.png" alt="Tecidos diversos" class="w-full h-48 object-cover">
@@ -140,8 +152,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Product 4 -->
           <div
             class="product-card bg-[#F9C6C6] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300">
             <img src="assets/agulhas.png" alt="Agulhas e alfinetes" class="w-full h-48 object-cover">
@@ -155,11 +165,7 @@
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="text-center mt-10">
-          <a href="#all-products" class="text-[#C75B6B] hover:text-[#a94a59] font-semibold underline">Ver
-            todos os produtos</a>
+          </div> -->
         </div>
       </div>
     </section>
@@ -251,7 +257,6 @@
               </li>
               <li><a href="#sobre" class="text-gray-400 hover:text-[#a94a59] transition duration-300">Sobre Nós</a>
               </li>
-              <li><a href="#" class="text-gray-400 hover:text-[#a94a59] transition duration-300">Blog</a></li>
               <li><a href="#contato" class="text-gray-400 hover:text-[#a94a59] transition duration-300">Contato</a>
               </li>
             </ul>
@@ -295,7 +300,7 @@
         </div>
 
         <div class="pt-6 border-t border-[#C75B6B] text-center text-white text-sm">
-          <p>&copy; 2023 Betty Aviamentos. Todos os direitos reservados.</p>
+          <p>&copy; 2025 Betty Aviamentos. Todos os direitos reservados.</p>
           <p class="mt-2">Desenvolvido com <i class="fas fa-heart text-[#C75B6B]"></i> para amantes de costura.</p>
         </div>
       </div>

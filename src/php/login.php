@@ -15,17 +15,18 @@
         $pass = $_POST['loginPass'];
 
         $sql = "SELECT * FROM usuario WHERE email = '$user'";
-        $result = mysqli_query($mysqli, $sql);
+        $result = mysqli_query($connection, $sql);
      
         if($result && mysqli_num_rows($result) === 1){
             $line = mysqli_fetch_assoc($result);
 
-            if($password == $line['senha']){
-                mysqli_query($mysqli, $updateAccess);
+            if($pass == $line['senha']){
                 $_SESSION['id'] = $line['idusuario'];
                 $_SESSION['nome'] = $line['nome'];
+                $_SESSION['email'] = $line['email'];
 
-                header("Location: ../lojas.html");
+
+                header("Location: ../gerenciamento.php");
                 }
             }else{
                 echo "<div class='error'>";
@@ -34,7 +35,7 @@
                 echo "</div>";
                 exit();
             }
-        mysqli_close($mysqli);
+        mysqli_close($connection);
         ?>
     </body>
 </html>
