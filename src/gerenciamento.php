@@ -126,6 +126,11 @@ $result2 = mysqli_query($connection, $sql2);
           <!--Novo cadastro-->
           <div class="flex justify-between items-center mb-6">
             <h3 class="text-lg font-semibold text-gray-800">Lista de usuários</h3>
+                    <a href="insertUsuario.php">
+          <button class="bg-[#C75B6B] hover:bg-[#a94a59] text-white px-4 py-2 rounded-md transition-all btn-hover">
+            <i class="fas fa-plus mr-2"></i> Novo Cadastro
+          </button>
+        </a>
           </div>
         <div class="overflow-x-auto">
           <table class="min-w-full border rounded-lg overflow-hidden shadow">

@@ -30,8 +30,8 @@
                 }
             }else{
                 echo "<div class='error'>";
-                echo "<h2>ERROR!</h2>";
-                echo "User not found.<br> Please go back and try again.<br>";
+                echo "<h2>ERRO!</h2>";
+                echo "Usuário não encontrado.<br> Tente novamente.<br>";
                 echo "</div>";
                 exit();
             }
