@@ -12,8 +12,8 @@ create table oliveira(
 create table usuario(
     idusuario int primary key auto_increment,
     nome varchar(100) not null,
-    email varchar(100) not n ll,
-    senha varchar(255) not null,
+    email varchar(100) not null unique,
+    senha varchar(255) not null
 );
 
 INSERT INTO oliveira (nome, imagem, preco, descricao) VALUES

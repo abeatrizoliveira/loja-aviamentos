@@ -12,23 +12,19 @@
     <div class="flex justify-center mb-2">
       <img src="assets/logo(1).png" alt="Logo Betty Aviamentos" class="h-20 w-auto">
     </div>
-    <form id="cadastroForm" class="space-y-4" method="POST" action="php/cadastroProduto.php" enctype="multipart/form-data">
+    <form id="cadastroForm" class="space-y-4" method="POST" action="php/cadastroUsuario.php" enctype="multipart/form-data">
   <div>
     <label for="cadastroNome" class="block text-black font-medium">Nome</label>
     <input type="text" id="cadastroNome" name="nome" class="w-full border border-[#f9c6c6] bg-white rounded px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#C75B6B] text-black" required placeholder="Digite seu nome">
   </div>
   <div>
-    <label for="cadastroImagem" class="block text-black font-medium">Imagem</label>
-    <input type="file" id="cadastroImagem" name="imagem" accept="image/*" required>
-  </div>
-  <div>
-    <label for="cadastroPreco" class="block text-black font-medium">Preço</label>
-    <input type="text" id="cadastroPreco" name="preco" class="w-full border border-[#f9c6c6] bg-white rounded px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#C75B6B] text-black" required placeholder="Digite o preço">
+    <label for="cadastroPreco" class="block text-black font-medium">Email</label>
+    <input type="email" id="cadastroPreco" name="email" class="w-full border border-[#f9c6c6] bg-white rounded px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#C75B6B] text-black" required placeholder="Digite o email">
   </div>
 
   <div>
-    <label for="cadastroDesc" class="block text-black font-medium">Descrição</label>
-    <input type="text" id="cadastroDesc" name="desc" class="w-full border border-[#f9c6c6] bg-white rounded px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#C75B6B] text-black" required placeholder="Digite a quantidade">
+    <label for="cadastroDesc" class="block text-black font-medium">Senha</label>
+    <input type="password" id="cadastroDesc" name="senha" class="w-full border border-[#f9c6c6] bg-white rounded px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#C75B6B] text-black" required placeholder="Digite a senha">
   </div>
 
   <input type="submit" class="block w-full bg-[#C75B6B] hover:bg-[#a94a59] text-white font-bold py-2 rounded transition shadow text-center" value="Cadastrar produto">
